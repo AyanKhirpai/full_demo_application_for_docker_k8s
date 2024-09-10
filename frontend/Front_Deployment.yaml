@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+    name: frontend-deploy
+    labels:
+      name: frontend-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: frontend-pod
+  template:
+    metadata:
+      name: frontend-pod
+      labels:
+        name: frontend-pod
+    spec:
+      containers:
+        - name: my-con1
+          image: 314146339352.dkr.ecr.ap-south-1.amazonaws.com/frontend:latest
+          ports:
+            - containerPort: 8080
+
+    
