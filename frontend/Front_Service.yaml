@@ -5,9 +5,9 @@ metadata:
   labels: 
     name: frontendend-service
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
-    - port: 8000
+    - port: 8080
       targetPort: 8080
   selector:
     name: frontendend-pod
