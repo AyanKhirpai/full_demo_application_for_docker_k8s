@@ -14,7 +14,7 @@ def calculate():
     num2 = request.form['num2']
     
     # Replace with your server's public IP or domain name
-    response = requests.post('backend-service:9000/sum', json={'num1': num1, 'num2': num2})
+    response = requests.post('http://backend-service:9000/sum', json={'num1': num1, 'num2': num2})
 
     
     if response.status_code == 200:
