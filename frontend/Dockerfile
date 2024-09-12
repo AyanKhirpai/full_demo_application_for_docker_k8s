@@ -5,15 +5,14 @@ FROM python
 WORKDIR /app
 
 # Copy the current directory contents into the container
-COPY . /app
+COPY frontend.py /app
+COPY templates /app/templates
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir Flask
+RUN pip install flask requests
 
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
 
-ENV FLASK_APP=frontend.py
-
 # Run frontend.py when the container launches
-CMD ["flask", "run", "--host=0.0.0.0", "--port=8080"]
+CMD ["python", "frontend.py"]
